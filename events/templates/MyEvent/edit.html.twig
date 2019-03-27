@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container  mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/event/add">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="">Edycja wydarzenia</a>
+            </li>
+        </ul>
+    </div>
+    {{ form(form) }}
+    <span id="category" class="invisible">{{ event.category }}</span>
+    <span id="province" class="invisible">{{ event.province }}</span>
+    <span id="startsAt" class="invisible">{{ event.startsAt | date("Y-m-d H:i") }}</span>
+    <span id="endsAt" class="invisible">{{ event.endsAt | date("Y-m-d H:i") }}</span>
+{% endblock %}

@@ -1,0 +1,446 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"post",
+				"postName"
+			],
+			[
+				"pos",
+				"postName"
+			],
+			[
+				"full",
+				"fullPost"
+			],
+			[
+				"ge",
+				"getAttribute"
+			],
+			[
+				"get",
+				"getBlogPost"
+			],
+			[
+				"shad",
+				"shadowRoot"
+			],
+			[
+				"render",
+				"renderStyles"
+			],
+			[
+				"P",
+				"POSTS_SUB_URL"
+			],
+			[
+				"F",
+				"FILES_URL"
+			],
+			[
+				"HT",
+				"HTMLElement"
+			],
+			[
+				"ex",
+				"extends"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"HTML",
+				"HtmlElementWithContent"
+			],
+			[
+				"header",
+				"header-heading"
+			],
+			[
+				"h",
+				"header"
+			],
+			[
+				"e",
+				"extends"
+			],
+			[
+				"H",
+				"HtmlElementWithContent"
+			],
+			[
+				"tag",
+				"tagStyle"
+			],
+			[
+				"text",
+				"text-decoration\tproperty"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"list-",
+				"list-style-type\tproperty"
+			],
+			[
+				"space",
+				"space-between\tjustify-content"
+			],
+			[
+				"g",
+				"getBlogPost"
+			],
+			[
+				"R",
+				"REPOS_URL"
+			],
+			[
+				"for",
+				"FORBIDDEN_REPOS"
+			],
+			[
+				"stars",
+				"starsInfo"
+			],
+			[
+				"c",
+				"content\tAttr"
+			],
+			[
+				"T",
+				"TOO_LESS"
+			],
+			[
+				"numb",
+				"numberBetween"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"eslint",
+				"ESLint"
+			],
+			[
+				"eslin",
+				"ESLint"
+			],
+			[
+				"esling",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax: bla",
+				"Set Syntax: Laravel Blade"
+			],
+			[
+				"blade",
+				"Set Syntax: Laravel Blade"
+			],
+			[
+				"Snippet: ",
+				"Snippet: <?php if (…) ?> … <?php else ?> … <?php endif ?>"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 254.0,
+		"history":
+		[
+			"npm run build",
+			"npm run start",
+			"ls",
+			"npm run start",
+			"laravel blade highlihter",
+			"blade"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/lucyna/coding/events/src/Controller/EventController.php",
+		"/home/lucyna/coding/events/templates/base.html.twig",
+		"/home/lucyna/coding/events/src/Kernel.php",
+		"/opt/lampp/htdocs/cake/lib/Cake/Utility/Debugger.php",
+		"/home/lucyna/Pobrane/materialy_do_kursu/01_02 materiały do kursu/Aplikacja/auction.io/src/AppBundle/EventDispatcher/AuctionEvent.php",
+		"/home/lucyna/Pobrane/materialy_do_kursu/01_02 materiały do kursu/Aplikacja/auction.io/src/AppBundle/EventDispatcher/AuctionSubscriber.php",
+		"/home/lucyna/Pobrane/materialy_do_kursu/01_02 materiały do kursu/Aplikacja/auction.io/src/AppBundle/Controller/AuctionController.php",
+		"/home/lucyna/Pobrane/materialy_do_kursu/01_02 materiały do kursu/Aplikacja/auction.io/src/AppBundle/Command/ExpireAuctionCommand.php",
+		"/home/lucyna/Pobrane/materialy_do_kursu/01_02 materiały do kursu/Aplikacja/auction.io/src/AppBundle/Entity/Offer.php",
+		"/opt/lampp/htdocs/cake/src/Template/Articles/index.ctp",
+		"/opt/lampp/htdocs/cake/src/Template/Articles/view.ctp",
+		"/opt/lampp/htdocs/cake/src/Template/Articles/edit.ctp",
+		"/opt/lampp/htdocs/cake/src/Template/Articles/add.ctp",
+		"/opt/lampp/htdocs/cake/config/app.php",
+		"/opt/lampp/htdocs/cake/src/Model/Table/ArticlesTable.php",
+		"/opt/lampp/htdocs/cake/src/Model/Entity/Article.php",
+		"/opt/lampp/htdocs/cake/src/Controller/ArticlesController.php",
+		"/opt/lampp/htdocs/cake/src/Model/Entity/Product.php",
+		"/opt/lampp/htdocs/cake/src/Model/Table/ProductsTable.php",
+		"/opt/lampp/htdocs/cake/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php",
+		"/opt/lampp/htdocs/cake/app/Config/database.php",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/blog/index.html",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/blog/component.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/index.html",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/github/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/github/model.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/blog/style.css",
+		"/home/lucyna/Dokumenty/JS/fajny_js/package.json",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/github/component.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/about-me/component.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/github/service.js",
+		"/home/lucyna/Dokumenty/JS/api github.json",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/blog/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/webpack.config.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/random.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/about-me/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/dist/index.html",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/joke/service.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/joke/model.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/joke/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/github/converter.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/.eslintrc.json",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/input.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/success.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/userInfo.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/constants.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/game/count.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/eslit_test.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/node_modules/eslint-config-airbnb-base/rules/errors.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/node_modules/eslint-config-airbnb-base/rules/best-practices.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/src/test.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/node_modules/eslint-config-airbnb-base/rules/es6.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/test.js",
+		"/home/lucyna/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/lucyna/Dokumenty/JS/fajny_js/index.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/dist/main.js",
+		"/home/lucyna/Dokumenty/PHP/Sublime/udemy.sublime-project",
+		"/opt/lampp/htdocs/enjoythetrip/node_modules/friendly-errors-webpack-plugin/src/transformers/esLintError.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/node_modules/eslint/conf/eslint-recommended.js",
+		"/home/lucyna/Dokumenty/JS/fajny_js/package-lock.json",
+		"/opt/lampp/htdocs/enjoythetrip/app/User.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/CommentsTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/ArticlesTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/NotificationsTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/layouts/frontend.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/auth/register.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/routes/web.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/City.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/AddressesTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/ObjectsTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/CitiesTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/DatabaseSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/UsersTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/RoleUserTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/RolesTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/ReservationsTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/RoomsTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/PhotosTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/seeds/LikeablesTableSeeder.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_120940_create_role_user_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_120834_create_roles_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_120423_create_reservation_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/TouristObject.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Enjoythetrip/Interfaces/FrontendRepositoryInterface.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/index.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Photo.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Controllers/FrontendController.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Providers/AppServiceProvider.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Enjoythetrip/Repositories/FrontendRepository.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_120116_create_articles_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_115920_create_addresses_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_115619_create_rooms_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_112052_create_cities_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_113811_create_photos_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_113431_create_likeables_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_113051_create_comments_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_112704_create_objects_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2019_01_03_112251_create_notifications_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/.env",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/layouts/app.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Controllers/Auth/RegisterController.php",
+		"/opt/lampp/htdocs/enjoythetrip/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Controllers/Auth/LoginController.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Controllers/Auth/ResetPasswordController.php",
+		"/opt/lampp/htdocs/enjoythetrip/app/Http/Controllers/BackendController.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/lang/pl/routes.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/lang/en/routes.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/saveroom.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/cities.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/webpack.mix.js",
+		"/opt/lampp/htdocs/enjoythetrip/package.json",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/saveobject.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/profile.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/index.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/backend/myobjects.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/person.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/room.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/roomsearch.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/layouts/backend.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/object.blade.php",
+		"/opt/lampp/htdocs/enjoythetrip/resources/views/frontend/article.blade.php",
+		"/home/lucyna/Dokumenty/PHP/Sublime/kurs_laravel.sublime-workspace",
+		"/home/lucyna/Dokumenty/PHP/udemy/laravel/resources/views/layouts/frontend.blade.php",
+		"/home/lucyna/Dokumenty/PHP/udemy/laravel/resources/views/backend/saveroom.blade.php",
+		"/home/lucyna/Dokumenty/PHP/udemy/laravel/resources/views/backend/saveobject.blade.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 125.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 47.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "console.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"eslint",
+				"enjoythetrip/node_modules/friendly-errors-webpack-plugin/src/transformers/esLintError.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 295.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

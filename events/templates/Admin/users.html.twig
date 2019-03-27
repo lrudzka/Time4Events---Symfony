@@ -1,0 +1,76 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_index') }}">Moje wydarzenia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_add') }}">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin_index') }}">Panel administratora</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Użytkownicy</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        {% for message in app.flashes("success") %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <h3>
+        Użytkownicy systemu:
+    </h3>
+    <br/>
+    <div class="container">
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>Nazwa użytkownika</th>
+                    <th>Liczba eventów</th>
+                    <th>Uprawnienia administratora</th>
+                </tr>
+            </thead>
+            {% for user in users %}
+                <tr> 
+                    <td>{{ user.name }}</td>
+                    <td class="text-right">
+                        {% set counter=0 %}    
+                        {% for event in user.events %}
+                            {% set counter = counter+1 %}
+                        {% endfor %}
+                        {{ counter }}
+                    </td>
+                    <td class="text-center">
+                        {% set admin = false %}
+                        {% for role in user.roles %}
+                            {% if role=='ROLE_ADMIN' %}
+                                {% set admin=true %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if admin == true %}
+                            TAK <a href="{{ url("admin_remove_role_admin", {"id":user.id }) }}" class="btn btn-danger btn-sm ml-2"> Usuń </a>
+                        {% else %}
+                            NIE <a href="{{ url("admin_add_role_admin", {"id":user.id}) }}" class="btn btn-success btn-sm ml-2"> Dodaj </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+
+    </div>
+    <br/>
+        
+        
+{% endblock %}

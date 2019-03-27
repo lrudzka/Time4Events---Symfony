@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_index') }}">Moje wydarzenia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_add') }}">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Panel administratora</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        {% for message in app.flashes("success") %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <h3>
+        Panel administratora
+    </h3>
+    
+    <h5>
+        <a href="{{ url('admin_users')  }}">Lista użytkowników</a>
+    </h5>
+    <h5>
+        <a href="{{ url('admin_categories')  }}">Lista kategorii</a>
+    </h5>
+
+        
+        
+{% endblock %}

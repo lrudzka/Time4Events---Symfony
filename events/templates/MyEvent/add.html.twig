@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container  mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_index') }}">Moje wydarzenia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/event/add">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
+            </li>
+            {% if is_granted("ROLE_ADMIN") %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin_index') }}">Panel administratora</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="container">
+        {% for message in app.flashes("error") %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {{ form(form, { "attr": { "novalidate": "novalidate" } }) }}
+    <div class="invisible" id="addForm"></div>
+    
+
+    
+{% endblock %}

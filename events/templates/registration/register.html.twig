@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    
+    <div class="container mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Zaloguj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Zarejestruj się</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        {% for message in app.flashes("error") %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    </div>
+
+    {{ form_start(registrationForm, { "attr": { "novalidate": "novalidate" } }) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.password) }}
+        <div class="offset-sm-2">
+            <button class="btn btn-primary">Zarejestruj się</button>
+        </div>
+    {{ form_end(registrationForm) }}
+{% endblock %}
