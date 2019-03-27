@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            {% if is_granted("ROLE_USER") %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_index') }}">Moje wydarzenia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_add') }}">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_login') }}">Zaloguj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_register') }}">Zarejestruj się</a>
+            </li>
+            {% endif %}
+            {% if is_granted("ROLE_ADMIN") %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin_index') }}">Panel administratora</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Szczegóły</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <strong>{{ event.title }}</strong>
+        </div>
+        <div class="card-body">
+            <p><em>Kategoria: </em> {{ event.category }}</p>
+            <p><em>Start: </em> {{ event.startsAt | date("Y-m-d") }}, <em>godz.: </em> {{ event.startsAt | date("H:i") }}</p>
+            <p><em>Koniec: </em> {{ event.endsAt | date("Y-m-d") }}, <em>godz.: </em> {{ event.endsAt | date("H:i") }} </p>
+            <p><em>Adres: </em> {{ event.city }}, {{ event.address }}</p>
+            <br>
+            <p><strong>SZCZEGÓŁY</strong></p>
+            <p>{{ event.description }}</p>
+            <br>
+            <p><a href="{{ event.eventUrl }}" target="_blank">{{ event.eventUrl }}</a></p>
+            <img class="card-img-bottom mb-2" src="{{ event.pictureUrl }}" alt="Event image">
+
+            
+            
+        </div>
+        <div class="card-footer">
+            
+            <span><em>Dodane przez: </em> {{ createdBy.name }} <em> w dniu:</em> {{ event.createdAt | date("Y-m-d") }}; <em>ostatnia zmiana:</em> {{ event.updatedAt | date("Y-m-d") }} </span>
+        </div>
+    </div>
+    
+{% endblock %}
