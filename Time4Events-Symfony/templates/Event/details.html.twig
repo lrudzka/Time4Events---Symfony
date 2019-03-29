@@ -34,6 +34,11 @@
             </li>
         </ul>
     </div>
+    <div class="container">
+        {% for message in app.flashes("success") %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </div>
     <div class="card">
         <div class="card-header">
             <strong>{{ event.title }}</strong>
@@ -49,7 +54,14 @@
             <br>
             <p><a href="{{ event.eventUrl }}" target="_blank">{{ event.eventUrl }}</a></p>
             <img class="card-img-bottom mb-2" src="{{ event.pictureUrl }}" alt="Event image">
-
+            {% if is_granted("ROLE_ADMIN") %}
+                {% if event.status=="active" %}
+                <a href="{{ url("admin_block_event", {"id":event.id})  }}" class="btn btn-danger btn-small">Zablokuj wydarzenie</a>
+                {% else %}
+                <a href="{{ url("admin_unblock_event", {"id":event.id})  }}" class="btn btn-success btn-small">Odblokuj wydarzenie</a>
+                {% endif %}
+            {% endif %}
+           
             
             
         </div>

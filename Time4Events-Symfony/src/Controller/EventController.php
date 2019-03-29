@@ -34,7 +34,7 @@ class EventController extends AbstractController {
         
         $entityManager = $this->getDoctrine()->getManager();
         
-        $events = $entityManager->getRepository(Event::class)->findEvents(); 
+        $events = $entityManager->getRepository(Event::class)->findActiveEvents(); 
 
         return $this->render("Event/index.html.twig", ["events" => $events]);
     }
@@ -47,12 +47,12 @@ class EventController extends AbstractController {
      */
     public function detailsAction(Event $event) {
         
+        if ( ($event->getStatus() == Event::STATUS_BLOCKED) and (!$this->isGranted("ROLE_ADMIN")) ){
+            return $this->redirectToRoute("event_index");
+        }
+        
         $entityManager = $this->getDoctrine()->getManager();
         $createdBy = $entityManager->getRepository(User::class)->findOneBy(["id"=>$event->getOwner()]);
-        
-        if ($this->getUser() == $createdBy) {
-            return $this->redirectToRoute("my_event_details", ["id"=>$event->getId()]);
-        }
 
         return $this->render("Event/details.html.twig", ["event"=>$event, "createdBy"=>$createdBy ]);
     }

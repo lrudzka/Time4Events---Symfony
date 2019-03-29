@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container mb-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_index') }}">Moje wydarzenia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('my_event_add') }}">Dodaj wydarzenie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin_index') }}">Panel administratora</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Zablokowane wydarzenia</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="container">
+        {% for message in app.flashes("success") %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <h1>
+        Lista zablokowanych wydarzeń:
+    </h1>
+    <br>
+
+    <div class="row">
+    
+        {% for event in events %}
+        
+            <div class="col-12 col-sm-4">
+            
+                <div class="card mb-1">
+                    <img class="card-img-top" src="{{ event.pictureUrl }}" alt="Event image">
+                    <div class="card-body">
+                        <p class="card-title"><strong>{{ event.title }}</strong></p>
+                        <div class="card-text">
+                            <p><em>{{ event.category }}</em></p>
+                            <p><em>Start:</em> {{ event.startsAt | date("Y-m-d") }} <em>, godz.:</em> {{ event.startsAt | date("H:i")  }}</p>
+                            <p><em>Koniec:</em> {{ event.endsAt | date("Y-m-d") }} <em>, godz.:</em> {{ event.endsAt | date("H:i")  }}</p>
+                            <p><em>Miasto:</em> {{ event.city  }} , <em>woj.:</em> {{ event.province }}</p>
+                            <a href="{{ url("event_details", {"id":event.id}) }}" class="btn btn-success">Szczegóły</a>
+                            <br/>
+                            <br/>
+                            <small class="text-muted"><em>Dodane przez: </em>{{ event.user }}<em> , w dniu:</em> {{ event.createdAt | date("Y-m-d") }}</small>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        
+        {% else %}
+            <div>
+                <h3>Brak danych</h3>
+            </div>
+        {% endfor %}
+        
+    </div>
+        
+        
+{% endblock %}

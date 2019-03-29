@@ -53,7 +53,7 @@ class EventRepository extends ServiceEntityRepository
      * 
      * @return array
      */
-    public function findEvents() {
+    public function findActiveEvents() {
         return $this
                 ->getEntityManager()
                 ->createQuery(
@@ -71,9 +71,41 @@ class EventRepository extends ServiceEntityRepository
                         u.name user
                      FROM App:Event e
                      JOIN App:User u WITH e.owner=u.id
+                     WHERE e.status=:status
                      ORDER BY startsAt
                      "
                     )
+                ->setParameter('status', Event::STATUS_ACTIVE)
+                ->getResult();
+    }
+    
+    /**
+     * 
+     * @return array
+     */
+    public function findBlockedEvents(){
+        return $this
+                ->getEntityManager()
+                ->createQuery(
+                    "SELECT 
+                        e.id id, 
+                        e.pictureUrl pictureUrl,
+                        e.title title,
+                        e.category category,
+                        e.startsAt startsAt,
+                        e.endsAt endsAt,
+                        e.city city,
+                        e.province province,
+                        e.address address,
+                        e.createdAt createdAt,
+                        u.name user
+                     FROM App:Event e
+                     JOIN App:User u WITH e.owner=u.id
+                     WHERE e.status=:status
+                     ORDER BY startsAt
+                     "
+                    )
+                ->setParameter('status', Event::STATUS_BLOCKED)
                 ->getResult();
     }
     

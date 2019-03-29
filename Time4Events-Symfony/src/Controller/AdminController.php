@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\User;
 use App\Entity\Category;
+use App\Entity\Event;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\CategoryType;
@@ -76,7 +77,7 @@ class AdminController extends AbstractController {
         $entityManager->persist($user);
         $entityManager->flush();
         
-        $this->addFlash("success", "Uprawnienia administratora dla użytkownika {$user->getName()} zostały dodane.");
+        
         return $this->redirectToRoute("admin_users");
     }
     
@@ -98,7 +99,7 @@ class AdminController extends AbstractController {
         $entityManager->persist($user);
         $entityManager->flush();
         
-        $this->addFlash("success", "Uprawnienia administratora dla użytkownika {$user->getName()} zostały usunięte.");
+        
         return $this->redirectToRoute("admin_users");
     }
     
@@ -134,7 +135,6 @@ class AdminController extends AbstractController {
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($category);
                 $entityManager->flush();
-
                 $this->addFlash("success", "Kategoria {$category->getName()} została dodana.");
                 return $this->redirectToRoute("admin_categories");
             }
@@ -150,8 +150,7 @@ class AdminController extends AbstractController {
                     "categories" => $categories,
                     "addForm"=>$addForm->createView()
                 ]);
-    }
-    
+    }  
     
     /**
      * @Route("/admin/categoryRemove/{id}", name="admin_remove_category")
@@ -169,12 +168,71 @@ class AdminController extends AbstractController {
         $entityManager->remove($category);
         $entityManager->flush();
         
-        $this->addFlash("success", "Kategoria {$category->getName()} została usunięta.");
         return $this->redirectToRoute("admin_categories");
     }
     
-
+    /**
+     * @Route("/admin/blockEvent/{id}", name="admin_block_event")
+     * 
+     * @param Event $event
+     * @return Response
+     */
+    public function blockEventAction(Event $event) {
+        if (!($this->isGranted("ROLE_ADMIN")))
+        {
+            return $this->redirectToRoute("event_index");
+        }
+        
+        $event->setStatus(Event::STATUS_BLOCKED);
+        
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($event);
+        $entityManager->flush();
+        
+        $this->addFlash("success", "Wydarzenie zostało zablokowanie");
+        return $this->redirectToRoute("event_details", ["id"=>$event->getId()]);
+    }
     
+    /**
+     * @Route("/admin/unblockEvent/{id}", name="admin_unblock_event");
+     * 
+     * @param Event $event
+     * @return Response
+     */
+    public function unblockEventAction(Event $event){
+        if (!($this->isGranted("ROLE_ADMIN")))
+        {
+            return $this->redirectToRoute("event_index");
+        }
+        
+        $event->setStatus(Event::STATUS_ACTIVE);
+        
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($event);
+        $entityManager->flush();
+        
+        $this->addFlash("success", "Wydarzenie zostało odblokowanie");
+        return $this->redirectToRoute("event_details", ["id"=>$event->getId()]);
+    }
+    
+    /**
+     * @Route("/admin/blocked", name="admin_blocked_events")
+     * 
+     * @return Response
+     */
+    public function blockedEventsAction() {
+        if (!($this->isGranted("ROLE_ADMIN")))
+        {
+            return $this->redirectToRoute("event_index");
+        }
+        
+        
+        $entityManager = $this->getDoctrine()->getManager();
+        $blockedEvents = $entityManager->getRepository(Event::class)->findBlockedEvents();
+        
+        return $this->render("Admin/blocked.html.twig", ["events"=>$blockedEvents]);
+        
+    }
     
    
 }

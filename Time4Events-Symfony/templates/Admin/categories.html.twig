@@ -27,9 +27,6 @@
         {% for message in app.flashes("success") %}
             <div class="alert alert-success">{{ message }}</div>
         {% endfor %}
-        {% for message in app.flashes("error") %}
-            <div class="alert alert-danger">{{ message }}</div>
-        {% endfor %}
     </div>
     <h3>
         Dostępne kategorie:
@@ -41,7 +38,7 @@
                 <tr>
                     <th>Nazwa kategorii</th>
                     <th>Liczba eventów</th>
-                    <th>Usuwanie</th>
+                    <th>Usuń</th>
                 </tr>
             </thead>
             {% for category in categories %}
