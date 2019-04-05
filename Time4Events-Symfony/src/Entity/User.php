@@ -66,6 +66,15 @@ class User implements UserInterface
      * $ORM\JoinColumn(name="owner_id", referencedColumnName="id")
      */
     private $events;
+    
+    /**
+     *
+     * @var Report[]|ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="Report", mappedBy="user")
+     * @ORM\JoinColumn(name="reports", referencedColumnName="id")
+     */
+    private $reports;
 
     public function getId(): ?int
     {
@@ -181,6 +190,27 @@ class User implements UserInterface
     public function addEvent(Event $event)
     {
         $this->$events[] = $event;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return Report[]|ArrayCollection
+     */
+    public function getReports()
+    {
+        return $this->reports;
+    }
+    
+    /**
+     * 
+     * @param Report $report
+     * @return $this
+     */
+    public function addReport(Report $report)
+    {
+        $this->reports[] = $report;
+        
         return $this;
     }
 }

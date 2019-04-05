@@ -38,6 +38,9 @@
         {% for message in app.flashes("success") %}
             <div class="alert alert-success">{{ message }}</div>
         {% endfor %}
+        {% for message in app.flashes("error") %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
     </div>
     <div class="card">
         <div class="card-header">
@@ -68,6 +71,29 @@
         <div class="card-footer">
             
             <span><em>Dodane przez: </em> {{ createdBy.name }} <em> w dniu:</em> {{ event.createdAt | date("Y-m-d") }}; <em>ostatnia zmiana:</em> {{ event.updatedAt | date("Y-m-d") }} </span>
+        </div>
+        <div class="container">
+        {% if not is_granted("ROLE_ADMIN")%}
+            {% if reported %}
+                {{ form_start(unreportForm, {"attr": {"novalidate": "novalidate", "class": "float-right"}}) }}
+                    <div class="input-group">
+                        <div class="input-group-append">
+                             {{ form_widget(unreportForm.submit, {"attr": {"class": "btn btn-warning btn-sm "} }) }}   
+                        </div>
+                    </div>
+                    {{ form_rest(unreportForm) }}
+                {{ form_end(unreportForm) }}
+            {% else %}
+                {{ form_start(reportForm, {"attr": {"novalidate": "novalidate", "class": "float-right"}}) }}
+                    <div class="input-group">
+                        <div class="input-group-append">
+                             {{ form_widget(reportForm.submit, {"attr": {"class": "btn btn-danger btn-sm "} }) }}   
+                        </div>
+                    </div>
+                    {{ form_rest(reportForm) }}
+                {{ form_end(reportForm) }}
+            {% endif %}    
+        {% endif %}
         </div>
     </div>
     

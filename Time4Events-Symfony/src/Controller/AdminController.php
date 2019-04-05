@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Entity\User;
 use App\Entity\Category;
 use App\Entity\Event;
+use App\Entity\Report;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\CategoryType;
@@ -231,6 +232,24 @@ class AdminController extends AbstractController {
         $blockedEvents = $entityManager->getRepository(Event::class)->findBlockedEvents();
         
         return $this->render("Admin/blocked.html.twig", ["events"=>$blockedEvents]);
+        
+    }
+    
+    /**
+     * @Route("/admin/report", name="admin_report")
+     * 
+     * @return Response
+     */
+    public function reportListAction(){
+        
+        if (!($this->isGranted("ROLE_ADMIN")))
+        {
+            return $this->redirectToRoute("event_index");
+        }
+        $entityManager = $this->getDoctrine()->getManager();
+        $events = $entityManager->getRepository(Report::class)->findReportedEvents();
+        
+        return $this->render("Admin/report.html.twig", ["events"=>$events]);
         
     }
     

@@ -18,6 +18,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Entity\User;
+use App\Entity\Report;
 /**
  * Description of EventController
  *
@@ -53,8 +54,37 @@ class EventController extends AbstractController {
         
         $entityManager = $this->getDoctrine()->getManager();
         $createdBy = $entityManager->getRepository(User::class)->findOneBy(["id"=>$event->getOwner()]);
+        
+        $reported = false;
+        
+        if ($this->isGranted("ROLE_USER"))
+        {
+            $reported = $entityManager
+                    ->getRepository(Report::class)
+                    ->findOneBy([
+                        "user"=>$this->getUser(),
+                        "event"=>$event
+                    ]);
+        }
+        
+        $reportForm = $this->createFormBuilder()
+                ->setAction($this->generateUrl("event_report", ["id"=>$event->getId()]))
+                ->add("submit", SubmitType::class, ["label"=>"Zgłoś nadużycie"])
+                ->getForm();
+        
+        $unreportForm = $this->createFormBuilder()
+                ->setAction($this->generateUrl("event_unreport", ["id"=>$event->getId()]))
+                ->add("submit", SubmitType::class, ["label"=>"Cofnij zgłoszenie nadużycia"])
+                ->getForm();
 
-        return $this->render("Event/details.html.twig", ["event"=>$event, "createdBy"=>$createdBy ]);
+        return $this->render("Event/details.html.twig", 
+                [
+                    "event"=>$event, 
+                    "createdBy"=>$createdBy,
+                    "reportForm"=>$reportForm->createView(),
+                    "unreportForm"=>$unreportForm->createView(),
+                    "reported"=>$reported
+                    ]);
     }
     
     

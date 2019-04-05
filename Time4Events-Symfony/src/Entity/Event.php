@@ -6,7 +6,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\User;
-use App\Entity\Category;
+use App\Entity\Report;
 
 
 /**
@@ -173,6 +173,15 @@ class Event
      * @ORM\ManyToOne(targetEntity="User", inversedBy="events")
      */
     private $owner;
+    
+    /**
+     *
+     * @var Report[]|ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="Report", mappedBy="event")
+     * @ORM\JoinColumn(name="reports", referencedColumnName="id")
+     */
+    private $reports;
 
     
 
@@ -522,5 +531,26 @@ class Event
     public function getOwner()
     {
         return $this->owner;
+    }
+    
+    /**
+     * 
+     * @return Report[]|ArrayCollection
+     */
+    public function getReports()
+    {
+        return $this->reports;
+    }
+    
+    /**
+     * 
+     * @param Report $report
+     * @return $this
+     */
+    public function addReport(Report $report)
+    {
+        $this->reports[] = $report;
+        
+        return $this;
     }
 }

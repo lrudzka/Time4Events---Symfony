@@ -16,7 +16,10 @@
                 <a class="nav-link" href="{{ url('app_logout') }}">Wyloguj się</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Panel administratora</a>
+                <a class="nav-link" href="{{ url('admin_index') }}">Panel administratora</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Zgłoszenia</a>
             </li>
         </ul>
     </div>
@@ -26,21 +29,29 @@
         {% endfor %}
     </div>
     <h3>
-        Panel administratora
+        Lista zgłoszonych nadużyć:
     </h3>
     <br/>
-    <h5>
-        <a href="{{ url('admin_users')  }}">Lista użytkowników</a>
-    </h5>
-    <h5>
-        <a href="{{ url('admin_categories')  }}">Lista kategorii</a>
-    </h5>
-    <h5>
-        <a href="{{ url('admin_blocked_events')  }}">Zablokowane wydarzenia</a>
-    </h5>
-    <h5>
-        <a href="{{ url('admin_report') }}">Zgłoszone nadużycia</a>
-    </h5>
+    <div class="container">
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>Nazwa wydarzenia</th>
+                    <th>Liczba zgłoszeń</th>
+                </tr>
+            </thead>
+            {% for event in events %}
+                <tr> 
+                    <td><a href="{{ url("event_details", {"id":event.id}) }}">{{ event.title }}</a></td>
+                    <td class="text-center">
+                        {{ event.reports }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+
+    </div>
     <br/>
         
         
