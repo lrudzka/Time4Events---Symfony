@@ -72,10 +72,12 @@ class EventRepository extends ServiceEntityRepository
                      FROM App:Event e
                      JOIN App:User u WITH e.owner=u.id
                      WHERE e.status=:status
+                     AND e.endsAt>:now
                      ORDER BY startsAt
                      "
                     )
                 ->setParameter('status', Event::STATUS_ACTIVE)
+                ->setParameter('now', new \DateTime())
                 ->getResult();
     }
     
